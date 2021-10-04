@@ -1,0 +1,27 @@
+{
+  "name": "09-homework",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "commit": "git-cz",
+    "release": "standard-version ",
+    "version": "conventional-changelog -p angular -i CHANGELOG.md -s && git add CHANGELOG.md"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DarrickPrichett/09-Homework.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DarrickPrichett/09-Homework/issues"
+  },
+  "homepage": "https://github.com/DarrickPrichett/09-Homework#readme",
+  "dependencies": {
+    "commitizen": "^4.2.4",
+    "cz-conventional-changelog-for-jira-smart-commits": "^1.0.5",
+    "standard-version": "^9.3.1"
+  }
+}
