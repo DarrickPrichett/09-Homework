@@ -1,12 +1,14 @@
-// const generatePage = (userName, githubName) => `Name: ${userName}, Github: ${githubName}`;
-// console.log(generatePage('userName', 'githubName'));
+// TODO: Include packages needed for this application
 
 const fs = require("fs");
 const inquirer = require('inquirer');
 const path= require("path");
 const markdown= require("./utils/generateMarkdown.js");
+
 // TODO: Create an array of questions for user input
-const questions = [
+
+const questionsArray = () => {
+    return inquirer.prompt([
     {
         type: 'input',
         name: 'name',
@@ -60,7 +62,7 @@ const questions = [
     },
     {
         type: 'input',
-        name: '.description',
+        name: 'description',
         message: 'Enter a description of your project.  (Required)',
         validate: descriptionInput => {
           if (descriptionInput) {
@@ -73,7 +75,7 @@ const questions = [
     },
     {
         type: 'input',
-        name: '.installationInstructions',
+        name: 'installationInstructions',
         message: 'Enter your project installation instructions. (Required)',
         validate: installationInstructionsInput => {
           if (installationInstructionsInput) {
@@ -86,7 +88,7 @@ const questions = [
     },
     {
         type: 'input',
-        name: '.usageInformation',
+        name: 'usageInformation',
         message: 'Enter your project usage information. (Required)',
         validate: usageInformationInput => {
           if (usageInformationInput) {
@@ -98,8 +100,14 @@ const questions = [
         }
     },
     {
+        type: 'confirm',
+        name: 'confirmContribution',
+        message: 'Would you like other developers to contribute to the project?',
+        default: false
+    },
+    {
         type: 'input',
-        name: '.contributionGuidelines',
+        name: 'contributionGuidelines',
         message: 'Enter your project contribution guidelines. (Required)',
         validate: contributionGuidelinesInput => {
           if (contributionGuidelinesInput) {
@@ -112,7 +120,7 @@ const questions = [
     },
     {
         type: 'input',
-        name: '.Tests',
+        name: 'tests',
         message: 'Enter Test for your project'
     },
     {
@@ -121,7 +129,7 @@ const questions = [
         message:'What license would you like to use?',
         choices: ['MIT', 'APACHE 2.0', 'GPL 3.0', 'BSD 3', 'None'],
     }
-]
+])}
     
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
@@ -130,7 +138,7 @@ function writeToFile(fileName, data) {
 
 // TODO: Create a function to initialize app
 function init() {
-    inquirer.prompt(questions).then((responses)=>{
+    inquirer.prompt(questionsArray).then((responses)=>{
         writeToFile("newProjectREADME.md",markdown({...responses}))
     })
 }
