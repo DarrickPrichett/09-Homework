@@ -81,7 +81,7 @@ function generateMarkdown(data) {
   ${data.name}
   ${data.about}
   ${data.email}
-  ${data.github}
+  GitHub Repository: ${data.github}
 `;
 }
 

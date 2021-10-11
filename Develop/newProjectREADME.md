@@ -1,5 +1,5 @@
-[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
-  # TITLE\
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+  # README Generator
 
   ## Table of Contents
   [Description](#description)
@@ -11,26 +11,27 @@
   
 
   ## Description
-  alj;kjdf;ojas;dofijaposdjifp
+  produce a readme from information gathered in the command line
 
   ## Installation Instructions
-  lakjds;flkajsd
+  must install node.js
 
   ## Usage
-  laksdjf;lkajsd;f
+  to use enter node index.js
 
   ## Contributing
-  aldkjf;lajdsalksdf;lja
+  to contrubute you must be licensed
 
   ## Tests
-  laksdjf;laksjdkjas;dkfk
+  there are 5 tests
 
   ## License
-  [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+  [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
     <br>
-     <http://www.apache.org/licenses/LICENSE-2.0>
+     <https://opensource.org/licenses/GPL-3.0>
 
   ## Questions
   Darrick
-  alksdfjlj
-  adfaf
+  Hello I am a full stack web developer
+  DarickPrichett@aol.com
+  DarrickPrichett
