@@ -79,6 +79,7 @@ function generateMarkdown(data) {
 
   ## Questions
   ${data.name}
+  ${data.about}
   ${data.email}
   ${data.github}
 `;
