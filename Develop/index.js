@@ -7,8 +7,7 @@ const markdown= require("./utils/generateMarkdown.js");
 
 // TODO: Create an array of questions for user input
 
-const questionsArray = () => {
-    return inquirer.prompt([
+const questionsArray = [
     {
         type: 'input',
         name: 'name',
@@ -18,6 +17,19 @@ const questionsArray = () => {
             return true;
           } else {
             console.log('Please enter your name!');
+            return false;
+          }
+        }
+    },
+    {
+        type: 'input',
+        name: 'email',
+        message: 'What is your email? (Required)',
+        validate: emailInput => {
+          if (emailInput) {
+            return true;
+          } else {
+            console.log('Please enter your email!');
             return false;
           }
         }
@@ -116,12 +128,21 @@ const questionsArray = () => {
             console.log('Please enter your Contribution Guidelines!');
             return false;
           }
-        }
+        },
+        when: (answer) => answer.confirmContribution === true
     },
     {
         type: 'input',
         name: 'tests',
-        message: 'Enter Test for your project'
+        message: 'Enter your tests for your project? (Required)',
+        validate: testsInput => {
+          if (testsInput) {
+            return true;
+          } else {
+            console.log('Please enter your tests!');
+            return false;
+          }
+        }
     },
     {
         type: 'list',
@@ -129,7 +150,7 @@ const questionsArray = () => {
         message:'What license would you like to use?',
         choices: ['MIT', 'APACHE 2.0', 'GPL 3.0', 'BSD 3', 'None'],
     }
-])}
+]
     
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
